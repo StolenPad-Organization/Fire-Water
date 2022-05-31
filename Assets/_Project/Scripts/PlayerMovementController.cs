@@ -61,8 +61,8 @@ public class PlayerMovementController : MonoBehaviour
     private void Update()
     {
         InputController();
-        if (canMoveForward)
-            transform.Translate(Vector3.back * Time.deltaTime * playerSpeed);
+        //if (canMoveForward)
+        //    transform.Translate(Vector3.back * Time.deltaTime * playerSpeed);
     }
 
     private void ActivateMovement()
