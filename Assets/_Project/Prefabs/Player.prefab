@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5390280369993659764}
   - component: {fileID: 5390280369993659771}
+  - component: {fileID: 4403651083355696828}
+  - component: {fileID: 3101304153028842589}
   m_Layer: 0
   m_Name: FlameThrower
   m_TagString: Untagged
@@ -51,6 +53,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4403651083355696828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390280369993659765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e14847b76ac1f449a4234b421a21f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tag: FrostEnemy
+  damage: 1
+--- !u!65 &3101304153028842589
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390280369993659765}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 2, z: 10}
+  m_Center: {x: 0, y: 0, z: 5.5}
 --- !u!1 &5390280370103922969
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857da089eb8c3944985ee990a477cfbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 15
+  playerSpeed: 12
   bounds: 9.5
   clampDelta: 50
   inputSpeed: 2
@@ -223,6 +252,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5390280371104128966}
   - component: {fileID: 5390280371104128965}
+  - component: {fileID: 466138041132007067}
+  - component: {fileID: 3634143885818324545}
   m_Layer: 0
   m_Name: FrostThrower
   m_TagString: Untagged
@@ -264,6 +295,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &466138041132007067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390280371104128967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0e14847b76ac1f449a4234b421a21f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tag: FireEnemy
+  damage: 1
+--- !u!65 &3634143885818324545
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5390280371104128967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 2, z: 10}
+  m_Center: {x: 0, y: 0, z: 5.5}
 --- !u!1001 &5390280370163493509
 PrefabInstance:
   m_ObjectHideFlags: 0
