@@ -3,10 +3,18 @@ using UnityEngine;
 
 public class PlayerWeapon : MonoBehaviour
 {
+    [SerializeField] private Element weaponElement;
     [SerializeField] private string Tag;
     [SerializeField] private int damage;
     List<EnemyController> enemiesList;
     List<EnemyController> removedList;
+    [SerializeField] private ParticleSystem weaponVFX;
+    [Header ("Liquid")]
+    [SerializeField] private Renderer liquidTank;
+    [SerializeField] private Vector2 liquidCapacity;
+    [SerializeField] private float liquidValue;
+    [SerializeField] private float fillRate;
+    private bool canFire = true;
     void Start()
     {
         enemiesList = new List<EnemyController>();
@@ -37,21 +45,40 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Update()
     {
-        foreach (var enemy in enemiesList)
+        UpdateLiquid();
+        if (canFire)
         {
-            if (enemy == null)
-                removedList.Add(enemy);
-        }
+            foreach (var enemy in enemiesList)
+            {
+                if (enemy == null)
+                    removedList.Add(enemy);
+            }
 
-        foreach (var enemy in removedList)
-        {
-            enemiesList.Remove(enemy);
-        }
+            foreach (var enemy in removedList)
+            {
+                enemiesList.Remove(enemy);
+            }
 
-        foreach (var enemy in enemiesList)
+            foreach (var enemy in enemiesList)
+            {
+                if (enemy != null)
+                    enemy.TakeDamage(damage);
+            }
+        }
+    }
+
+    void UpdateLiquid()
+    {
+        if(liquidValue > liquidCapacity.x)
         {
-            if (enemy != null)
-                enemy.TakeDamage(damage);
+            liquidValue -= fillRate * Time.deltaTime;
+            liquidValue = Mathf.Clamp(liquidValue, liquidCapacity.x, liquidCapacity.y);
+            liquidTank.material.SetFloat("Liquid_Fill", liquidValue);
+            if(liquidValue == liquidCapacity.x)
+            {
+                canFire = false;
+                weaponVFX.Stop(true);
+            }
         }
     }
 }
