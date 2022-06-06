@@ -12,9 +12,40 @@ public class PlayerWeapon : MonoBehaviour
     [Header ("Liquid")]
     [SerializeField] private Renderer liquidTank;
     [SerializeField] private Vector2 liquidCapacity;
-    [SerializeField] private float liquidValue;
+    public float liquidValue;
     [SerializeField] private float fillRate;
     private bool canFire = true;
+    private void OnEnable()
+    {
+        switch (weaponElement)
+        {
+            case Element.Fire:
+                EventManager.GetFireWeapon += GetPlayerWeapon;
+                break;
+            case Element.Frost:
+                EventManager.GetFrostWeapon += GetPlayerWeapon;
+                break;
+            default:
+                break;
+        }
+        
+    }
+
+    private void OnDisable()
+    {
+        switch (weaponElement)
+        {
+            case Element.Fire:
+                EventManager.GetFireWeapon -= GetPlayerWeapon;
+                break;
+            case Element.Frost:
+                EventManager.GetFrostWeapon -= GetPlayerWeapon;
+                break;
+            default:
+                break;
+        }
+    }
+
     void Start()
     {
         enemiesList = new List<EnemyController>();
@@ -71,6 +102,12 @@ public class PlayerWeapon : MonoBehaviour
     {
         if(liquidValue > liquidCapacity.x)
         {
+            if (weaponVFX.isStopped)
+            {
+                canFire = true;
+                weaponVFX.Play(true);
+            }
+
             liquidValue -= fillRate * Time.deltaTime;
             liquidValue = Mathf.Clamp(liquidValue, liquidCapacity.x, liquidCapacity.y);
             liquidTank.material.SetFloat("Liquid_Fill", liquidValue);
@@ -80,5 +117,10 @@ public class PlayerWeapon : MonoBehaviour
                 weaponVFX.Stop(true);
             }
         }
+    }
+
+    private PlayerWeapon GetPlayerWeapon()
+    {
+        return this;
     }
 }

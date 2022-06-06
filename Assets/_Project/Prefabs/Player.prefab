@@ -155,7 +155,7 @@ MonoBehaviour:
   liquidTank: {fileID: 2312149995718170043}
   liquidCapacity: {x: 0, y: 15}
   liquidValue: 15
-  fillRate: 1
+  fillRate: 0.5
 --- !u!65 &7054514086897487669
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 5398866653342830643}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -341,7 +341,7 @@ MonoBehaviour:
   liquidTank: {fileID: 3626341501418281733}
   liquidCapacity: {x: 0, y: 15}
   liquidValue: 15
-  fillRate: 1
+  fillRate: 0.5
 --- !u!65 &8683980226178465065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 5645948839787476484}
-  MaxWobble: 0.0025
+  MaxWobble: 0.001
   WobbleSpeed: 1
   Recovery: 3
 --- !u!1 &5233064367168013115

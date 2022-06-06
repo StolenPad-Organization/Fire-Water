@@ -7,3 +7,11 @@ enum Element
     Fire,
     Frost
 }
+
+enum Operator
+{
+    Plus,
+    Minus,
+    Devide,
+    Multiply
+}

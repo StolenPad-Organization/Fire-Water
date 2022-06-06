@@ -45,8 +45,8 @@ Material:
     - _WoobleX: 0
     - _WoobleZ: 0
     m_Colors:
-    - Color_1e6d50667e4e4263afb873f1cfcc91ae: {r: 0, g: 209.97711, b: 3067.9844, a: 0}
+    - Color_1e6d50667e4e4263afb873f1cfcc91ae: {r: 0, g: 1.8389531, b: 5.992157, a: 0}
     - Color_5853aa48161b4b129b517003a8b4ff7c: {r: 1, g: 0.5568628, b: 0, a: 1}
     - Liquid_Color: {r: 0, g: 0.049153805, b: 1, a: 1}
-    - Top_Color: {r: 0, g: 6.5224686, b: 766.9961, a: 1}
+    - Top_Color: {r: 0, g: 8.031373, b: 766.9961, a: 1}
   m_BuildTextureStacks: []

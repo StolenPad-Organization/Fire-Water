@@ -4,7 +4,8 @@ using UnityEngine;
 public static class EventManager
 {
     #region Player Events
-    
+    public static Func<PlayerWeapon> GetFrostWeapon;
+    public static Func<PlayerWeapon> GetFireWeapon;
     #endregion
 
     #region Ending Events
