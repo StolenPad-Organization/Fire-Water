@@ -8,9 +8,22 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private float maxHealth;
     [SerializeField] private HealthBar healthBar;
+    [SerializeField] private GameObject[] Models;
     void Start()
     {
         maxHealth = health;
+        //int x = Random.Range(0, Models.Length);
+        //for (int i = 0; i < Models.Length; i++)
+        //{
+        //    if(i == x)
+        //    {
+        //        Models[i].SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        Models[i].SetActive(false);
+        //    }
+        //}
     }
 
     void Update()
