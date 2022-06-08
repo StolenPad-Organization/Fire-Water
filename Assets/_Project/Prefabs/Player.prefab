@@ -961,7 +961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 3771467990993835825}
-  MaxWobble: 0.0004
+  MaxWobble: 0.0025
   WobbleSpeed: 1
   Recovery: 3
 --- !u!1 &4952506703231069014
@@ -1059,7 +1059,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 5645948839787476484}
-  MaxWobble: 0.0004
+  MaxWobble: 0.0025
   WobbleSpeed: 1
   Recovery: 3
 --- !u!1 &5233064367168013115
