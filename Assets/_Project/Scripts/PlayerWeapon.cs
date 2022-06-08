@@ -14,16 +14,18 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private Vector2 liquidCapacity;
     public float liquidValue;
     [SerializeField] private float fillRate;
-    private bool canFire = true;
+    private bool canFire = false;
     private void OnEnable()
     {
         switch (weaponElement)
         {
             case Element.Fire:
                 EventManager.GetFireWeapon += GetPlayerWeapon;
+                EventManager.OpenFireWeapon += ActivateWeapon;
                 break;
             case Element.Frost:
                 EventManager.GetFrostWeapon += GetPlayerWeapon;
+                EventManager.OpenFrostWeapon += ActivateWeapon;
                 break;
             default:
                 break;
@@ -37,9 +39,11 @@ public class PlayerWeapon : MonoBehaviour
         {
             case Element.Fire:
                 EventManager.GetFireWeapon -= GetPlayerWeapon;
+                EventManager.OpenFireWeapon -= ActivateWeapon;
                 break;
             case Element.Frost:
                 EventManager.GetFrostWeapon -= GetPlayerWeapon;
+                EventManager.OpenFrostWeapon -= ActivateWeapon;
                 break;
             default:
                 break;
@@ -50,6 +54,7 @@ public class PlayerWeapon : MonoBehaviour
     {
         enemiesList = new List<EnemyController>();
         removedList = new List<EnemyController>();
+        weaponVFX.Stop(true);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -100,27 +105,40 @@ public class PlayerWeapon : MonoBehaviour
 
     void UpdateLiquid()
     {
-        if(liquidValue > liquidCapacity.x)
+        if (canFire)
         {
-            if (weaponVFX.isStopped)
-            {
-                canFire = true;
-                weaponVFX.Play(true);
-            }
-
             liquidValue -= fillRate * Time.deltaTime;
             liquidValue = Mathf.Clamp(liquidValue, liquidCapacity.x, liquidCapacity.y);
-            liquidTank.material.SetFloat("Liquid_Fill", liquidValue);
             if(liquidValue == liquidCapacity.x)
             {
                 canFire = false;
                 weaponVFX.Stop(true);
             }
         }
+        liquidTank.material.SetFloat("Liquid_Fill", liquidValue);
     }
 
     private PlayerWeapon GetPlayerWeapon()
     {
         return this;
+    }
+
+    private void ActivateWeapon(bool Activate)
+    {
+        if (Activate)
+        {
+            if (liquidValue > liquidCapacity.x)
+            {
+                canFire = true;
+                if(weaponVFX.isStopped)
+                    weaponVFX.Play(true);
+            }   
+        }
+        else
+        {
+            canFire = false;
+            weaponVFX.Stop(true);
+        }
+
     }
 }

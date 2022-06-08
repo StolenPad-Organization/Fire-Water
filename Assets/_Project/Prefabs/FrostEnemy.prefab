@@ -1445,6 +1445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f3f325785f3344fa9f3aa7b12ca8b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyElement: 1
   speed: -18.5
   health: 100
   maxHealth: 0

@@ -6,6 +6,8 @@ public static class EventManager
     #region Player Events
     public static Func<PlayerWeapon> GetFrostWeapon;
     public static Func<PlayerWeapon> GetFireWeapon;
+    public static Action<bool> OpenFireWeapon;
+    public static Action<bool> OpenFrostWeapon;
     #endregion
 
     #region Ending Events

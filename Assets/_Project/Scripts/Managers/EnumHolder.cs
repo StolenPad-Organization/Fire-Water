@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum Element
+public enum Element
 {
     Fire,
     Frost
 }
 
-enum Operator
+public enum Operator
 {
     Plus,
     Minus,

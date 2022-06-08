@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    public Element EnemyElement;
     [SerializeField] private float speed;
     [SerializeField] private int health;
     [SerializeField] private float maxHealth;
