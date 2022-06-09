@@ -112,6 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2353631263530852560}
   - component: {fileID: 2353631263530852563}
+  - component: {fileID: 5618644115144425095}
   m_Layer: 0
   m_Name: BigFrostEnemy
   m_TagString: Untagged
@@ -734,6 +735,28 @@ MonoBehaviour:
   _followDuration: 1
   _startPosition: 0
   editorSetPosition: 1
+--- !u!195 &5618644115144425095
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2353631263530852561}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 4
+  m_Speed: 19
+  m_Acceleration: 10
+  avoidancePriority: 50
+  m_AngularSpeed: 500
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 6
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &2353631263890481112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1443,10 @@ MonoBehaviour:
   - {fileID: 5682461877326281367}
   - {fileID: 4877097641078073051}
   - {fileID: 1904325679150320213}
+  agent: {fileID: 5618644115144425095}
+  splineFollower: {fileID: 2353631263530852563}
+  model: {fileID: 3001094835121769857}
+  player: {fileID: 0}
 --- !u!1 &4264453114179423969
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,7 +1685,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6689470085197835517
 Transform:
   m_ObjectHideFlags: 0

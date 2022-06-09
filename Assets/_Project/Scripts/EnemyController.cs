@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using Dreamteck.Splines;
 
 public class EnemyController : MonoBehaviour
 {
@@ -10,6 +12,11 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float maxHealth;
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameObject[] Models;
+    [SerializeField] private NavMeshAgent agent;
+    public SplineFollower splineFollower;
+    public Transform model;
+    public Transform player;
+    
     void Start()
     {
         maxHealth = health;
@@ -30,6 +37,8 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         //transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if(player != null)
+            agent.SetDestination(player.position);
     }
 
     public void TakeDamage(int damage)
@@ -39,6 +48,14 @@ public class EnemyController : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Destroy(transform.parent.gameObject);
         }
     }
 }
