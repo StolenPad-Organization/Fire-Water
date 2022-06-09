@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     public SplineFollower splineFollower;
     public Transform model;
     public Transform player;
+    [SerializeField] private ParticleSystem deathVFX;
     
     void Start()
     {
@@ -47,6 +48,9 @@ public class EnemyController : MonoBehaviour
         healthBar.UpdateHealthUI(health / maxHealth);
         if (health <= 0)
         {
+            //deathVFX.transform.SetParent(null);
+            //deathVFX.transform.position = transform.position;
+            //deathVFX.Play();
             Destroy(gameObject);
         }
     }

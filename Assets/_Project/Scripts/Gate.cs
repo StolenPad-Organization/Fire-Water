@@ -9,6 +9,8 @@ public class Gate : MonoBehaviour
     [SerializeField] private Element element;
     [SerializeField] private float amount;
     [SerializeField] private TextMeshProUGUI gateText;
+    [SerializeField] private ParticleSystem gainVFX;
+    [SerializeField] private ParticleSystem drainVFX;
     void Start()
     {
         switch (Operator)
@@ -54,15 +56,19 @@ public class Gate : MonoBehaviour
         {
             case Operator.Plus:
                 playerWeapon.liquidValue += amount;
+                gainVFX.Play();
                 break;
             case Operator.Minus:
                 playerWeapon.liquidValue -= amount;
+                drainVFX.Play();
                 break;
             case Operator.Devide:
                 playerWeapon.liquidValue /= amount;
+                drainVFX.Play();
                 break;
             case Operator.Multiply:
                 playerWeapon.liquidValue *= amount;
+                gainVFX.Play();
                 break;
             default:
                 break;
