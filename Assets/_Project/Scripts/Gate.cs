@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class Gate : MonoBehaviour
 {
@@ -55,19 +56,31 @@ public class Gate : MonoBehaviour
         switch (Operator)
         {
             case Operator.Plus:
-                playerWeapon.liquidValue += amount;
+                playerWeapon.matchLiquid = false;
+                playerWeapon.liquidValueBG += amount;
+                DOTween.To(() => playerWeapon.liquidValue, x => playerWeapon.liquidValue = x, playerWeapon.liquidValueBG, 0.4f)
+                    .OnComplete(() => playerWeapon.matchLiquid = true);
                 gainVFX.Play();
                 break;
             case Operator.Minus:
+                playerWeapon.matchLiquid = false;
                 playerWeapon.liquidValue -= amount;
+                DOTween.To(() => playerWeapon.liquidValueBG, x => playerWeapon.liquidValueBG = x, playerWeapon.liquidValue, 0.4f)
+                    .OnComplete(() => playerWeapon.matchLiquid = true);
                 drainVFX.Play();
                 break;
             case Operator.Devide:
+                playerWeapon.matchLiquid = false;
                 playerWeapon.liquidValue /= amount;
+                DOTween.To(() => playerWeapon.liquidValueBG, x => playerWeapon.liquidValueBG = x, playerWeapon.liquidValue, 0.4f)
+                    .OnComplete(() => playerWeapon.matchLiquid = true);
                 drainVFX.Play();
                 break;
             case Operator.Multiply:
-                playerWeapon.liquidValue *= amount;
+                playerWeapon.matchLiquid = false;
+                playerWeapon.liquidValueBG *= amount;
+                DOTween.To(() => playerWeapon.liquidValue, x => playerWeapon.liquidValue = x, playerWeapon.liquidValueBG, 0.4f)
+                    .OnComplete(() => playerWeapon.matchLiquid = true);
                 gainVFX.Play();
                 break;
             default:

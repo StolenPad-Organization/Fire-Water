@@ -11,10 +11,13 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private ParticleSystem weaponVFX;
     [Header ("Liquid")]
     [SerializeField] private Renderer liquidTank;
+    [SerializeField] private Renderer liquidTankBG;
     [SerializeField] private Vector2 liquidCapacity;
     public float liquidValue;
+    public float liquidValueBG;
     [SerializeField] private float fillRate;
     private bool canFire = false;
+    public bool matchLiquid = true;
     private void OnEnable()
     {
         switch (weaponElement)
@@ -109,13 +112,16 @@ public class PlayerWeapon : MonoBehaviour
         {
             liquidValue -= fillRate * Time.deltaTime;
             liquidValue = Mathf.Clamp(liquidValue, liquidCapacity.x, liquidCapacity.y);
-            if(liquidValue == liquidCapacity.x)
+            if (matchLiquid)
+                liquidValueBG = liquidValue;
+            if (liquidValue == liquidCapacity.x)
             {
                 canFire = false;
                 weaponVFX.Stop(true);
             }
         }
         liquidTank.material.SetFloat("Liquid_Fill", liquidValue);
+        liquidTankBG.material.SetFloat("Liquid_Fill", liquidValueBG);
     }
 
     private PlayerWeapon GetPlayerWeapon()
