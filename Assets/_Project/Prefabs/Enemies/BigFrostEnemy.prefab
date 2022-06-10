@@ -2373,8 +2373,16 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19814712, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 19829598, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
       propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19829598, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: CollisionModule.enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19829598, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
@@ -2387,6 +2395,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19832984, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
       propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19832984, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: CollisionModule.enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19875362, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}

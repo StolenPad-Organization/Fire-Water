@@ -48,9 +48,8 @@ public class EnemyController : MonoBehaviour
         healthBar.UpdateHealthUI(health / maxHealth);
         if (health <= 0)
         {
-            //deathVFX.transform.SetParent(null);
-            //deathVFX.transform.position = transform.position;
-            //deathVFX.Play();
+            deathVFX.transform.SetParent(null);
+            deathVFX.Play();
             Destroy(gameObject);
         }
     }

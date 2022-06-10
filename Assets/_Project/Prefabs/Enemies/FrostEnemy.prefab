@@ -2094,7 +2094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 436234, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 436234, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2160,8 +2160,32 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19814712, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19814712, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19814712, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19814712, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19814712, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 19829598, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
       propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19829598, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: CollisionModule.enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19829598, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
@@ -2176,9 +2200,29 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 19832984, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 19875362, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
       propertyPath: playOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875362, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875362, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875362, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: InitialModule.startRotationX.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19875362, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: InitialModule.startRotationY.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 19883424, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
       propertyPath: playOnAwake
