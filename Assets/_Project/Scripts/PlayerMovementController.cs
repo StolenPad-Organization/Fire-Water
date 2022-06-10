@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //using DG.Tweening;
+using Dreamteck.Splines;
 
 public class PlayerMovementController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PlayerMovementController : MonoBehaviour
     bool onceStart;
     #endregion
     private Vector3 startMousePosition;
+    [SerializeField] private SplineFollower splineFollower;
 
     private void OnEnable()
     {
@@ -25,6 +27,7 @@ public class PlayerMovementController : MonoBehaviour
         //EventManager.mergeSwordEnding += MergeStart;
         //EventManager.startMovement += ActivateMovement;
         //EventManager.moveOtherGate += MoveOtherGate;
+        EventManager.TriggerLose += StopMovement;
     }
 
     private void OnDisable()
@@ -33,6 +36,7 @@ public class PlayerMovementController : MonoBehaviour
         //EventManager.mergeSwordEnding -= MergeStart;
         //EventManager.startMovement -= ActivateMovement;
         //EventManager.moveOtherGate -= MoveOtherGate;
+        EventManager.TriggerLose -= StopMovement;
     }
 
     private void Awake()
@@ -69,6 +73,13 @@ public class PlayerMovementController : MonoBehaviour
     {
         canMoveForward = true;
         canMove = true;
+    }
+
+    private void StopMovement()
+    {
+        canMoveForward = false;
+        canMove = false;
+        splineFollower.enabled = false;
     }
 
     //private void MoveOtherGate(string gateName)
