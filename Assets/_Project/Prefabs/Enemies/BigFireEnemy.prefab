@@ -496,9 +496,11 @@ MonoBehaviour:
   - {fileID: 1849713740369045043}
   agent: {fileID: 8067050783515782463}
   splineFollower: {fileID: 8733289791527786330}
-  model: {fileID: 5271704128166574142}
   player: {fileID: 0}
   deathVFX: {fileID: 8830771689066968769}
+  model: {fileID: 5271704128166574142}
+  Water: {fileID: 0}
+  minYPos: 0
 --- !u!1 &8733289791447160726
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,7 +1316,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 6
-  m_BaseOffset: 0
+  m_BaseOffset: -0.65
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &8733289792008501519
