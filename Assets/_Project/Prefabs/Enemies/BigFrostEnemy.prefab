@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7530084710842739497}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6469487260290872724}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3001094835121769857}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 2353631263530852560}
   - component: {fileID: 2353631263530852563}
   - component: {fileID: 5618644115144425095}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BigFrostEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -769,7 +769,7 @@ GameObject:
   - component: {fileID: 2353631263890481115}
   - component: {fileID: 2353631263890481109}
   - component: {fileID: 2353631263890481114}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,7 +851,7 @@ GameObject:
   - component: {fileID: 2353631264065213745}
   - component: {fileID: 2353631264065213750}
   - component: {fileID: 2353631264065213751}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -946,7 +946,7 @@ GameObject:
   - component: {fileID: 2353631264081161667}
   - component: {fileID: 2353631264081161664}
   - component: {fileID: 2353631264081161665}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1040,7 +1040,7 @@ GameObject:
   - component: {fileID: 2353631264679623651}
   - component: {fileID: 2353631264679623645}
   - component: {fileID: 2353631264679623650}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1121,7 +1121,7 @@ GameObject:
   - component: {fileID: 2353631264730901895}
   - component: {fileID: 2353631264730901889}
   - component: {fileID: 2353631264730901894}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1202,7 +1202,7 @@ GameObject:
   - component: {fileID: 2353631264809582719}
   - component: {fileID: 2353631264809582713}
   - component: {fileID: 2353631264809582718}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1283,7 +1283,7 @@ GameObject:
   - component: {fileID: 2353631265290021533}
   - component: {fileID: 2353631265290021535}
   - component: {fileID: 2353631265290021532}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cylinder (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1365,7 +1365,7 @@ GameObject:
   - component: {fileID: 8063581728435652300}
   - component: {fileID: 8459338046280866882}
   - component: {fileID: 8015515941980766459}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FrostEnemy
   m_TagString: FrostEnemy
   m_Icon: {fileID: 0}
@@ -1458,7 +1458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8163411008145859493}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model (0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1495,7 +1495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5313386067701280543}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1526,7 +1526,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7930998933227348433}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1557,7 +1557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1150626267484130928}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1588,7 +1588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6239485168650597329}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1619,7 +1619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2802340119245733147}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1650,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4263416731258036542}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1681,7 +1681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6689470085197835517}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1762,6 +1762,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime_05
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 46b94b847a0a70e479ec18f52377ed61, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46b94b847a0a70e479ec18f52377ed61, type: 3}
 --- !u!4 &29503740391547987 stripped
@@ -1827,6 +1831,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: e77d523ff28f5694c9907ade36442d23, type: 3}
       propertyPath: m_Name
       value: Slime_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e77d523ff28f5694c9907ade36442d23, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e77d523ff28f5694c9907ade36442d23, type: 3}
@@ -1894,6 +1902,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime_03
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c0b5b293a09640c4890043caef61134c, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0b5b293a09640c4890043caef61134c, type: 3}
 --- !u!4 &2004061738664427588 stripped
@@ -1960,6 +1972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime_00
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 76fd745a7bf26ad4e86d097c65470113, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76fd745a7bf26ad4e86d097c65470113, type: 3}
 --- !u!4 &3847585271507677674 stripped
@@ -1974,9 +1990,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2353631265515311462}
     m_Modifications:
+    - target: {fileID: 2623855043278791980, guid: eb5b42e35ee96ad479d4a24879f8b6ac, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240614864656943101, guid: eb5b42e35ee96ad479d4a24879f8b6ac, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5046039689765285018, guid: eb5b42e35ee96ad479d4a24879f8b6ac, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046039689765285018, guid: eb5b42e35ee96ad479d4a24879f8b6ac, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5046429731985956552, guid: eb5b42e35ee96ad479d4a24879f8b6ac, type: 3}
       propertyPath: m_Pivot.x
@@ -2163,6 +2191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime_04
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9a8a41ab358c9e542abd9296f1403d7a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a8a41ab358c9e542abd9296f1403d7a, type: 3}
 --- !u!4 &4622405536927225462 stripped
@@ -2228,6 +2260,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5cbeca1bffcecb34b96ac95539fc6b5b, type: 3}
       propertyPath: m_Name
       value: Slime_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5cbeca1bffcecb34b96ac95539fc6b5b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cbeca1bffcecb34b96ac95539fc6b5b, type: 3}
@@ -2295,6 +2331,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime_06
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b4a6880bae57fb41b3ed84f648188e6, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b4a6880bae57fb41b3ed84f648188e6, type: 3}
 --- !u!4 &5957234047377347432 stripped
@@ -2309,9 +2349,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2353631263530852560}
     m_Modifications:
+    - target: {fileID: 110174, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 131802, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 137980, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 165138, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 166328, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
       propertyPath: m_Name
       value: FrostDeath
+      objectReference: {fileID: 0}
+    - target: {fileID: 166328, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 193096, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 461856, guid: 65221b7881c819a429dbe5e646b0bd6b, type: 3}
       propertyPath: m_RootOrder
@@ -2481,6 +2545,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slime_02
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a9200141d1e2c07438e474f37779665e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9200141d1e2c07438e474f37779665e, type: 3}
 --- !u!4 &7108720816239661854 stripped
@@ -2546,6 +2614,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9fb3c66112c09a440a858b96a7738442, type: 3}
       propertyPath: m_Name
       value: Slime_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9fb3c66112c09a440a858b96a7738442, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fb3c66112c09a440a858b96a7738442, type: 3}
