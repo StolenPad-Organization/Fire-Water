@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using Dreamteck.Splines;
+using DG.Tweening;
 
 public class EnemyController : MonoBehaviour
 {
@@ -41,11 +42,13 @@ public class EnemyController : MonoBehaviour
     {
         //transform.Translate(Vector3.forward * speed * Time.deltaTime);
         if(player != null)
-            agent.SetDestination(player.position);
+            agent.SetDestination(player.position + Vector3.forward * 20f);
     }
-
     public void TakeDamage(int damage)
     {
+        model.transform.localScale = Vector3.one;
+        model.transform.DOScale(Vector3.one * 0.8f, 0.15f).OnComplete(() => model.transform.DOScale(Vector3.one, 0.15f));
+        model.transform.DOShakePosition(0.25f).OnComplete(() => model.transform.localPosition = Vector3.zero);
         health -= damage;
         healthBar.UpdateHealthUI(health / maxHealth);
         if(EnemyElement == Element.Frost)
@@ -55,8 +58,8 @@ public class EnemyController : MonoBehaviour
         }
         if (health <= 0)
         {
-            deathVFX.transform.SetParent(null);
-            deathVFX.Play();
+            //deathVFX.transform.SetParent(null);
+            //deathVFX.Play();
             Destroy(gameObject);
         }
     }

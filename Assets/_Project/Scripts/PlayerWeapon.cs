@@ -18,6 +18,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private float fillRate;
     private bool canFire = false;
     public bool matchLiquid = true;
+    [SerializeField] private GameObject lavaPool;
     private void OnEnable()
     {
         switch (weaponElement)
@@ -136,14 +137,21 @@ public class PlayerWeapon : MonoBehaviour
             if (liquidValue > liquidCapacity.x)
             {
                 canFire = true;
-                if(weaponVFX.isStopped)
+                if (weaponVFX.isStopped)
+                {
                     weaponVFX.Play(true);
+                    if (lavaPool != null)
+                        lavaPool.SetActive(true);
+                }
+                    
             }   
         }
         else
         {
             canFire = false;
             weaponVFX.Stop(true);
+            if (lavaPool != null)
+                lavaPool.SetActive(false);
         }
 
     }
