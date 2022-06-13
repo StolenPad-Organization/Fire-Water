@@ -65,9 +65,9 @@ public class EnemyController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.tag = "Untagged";
+            //other.tag = "Untagged";
             Destroy(transform.parent.gameObject);
-            EventManager.TriggerLose?.Invoke();
+            //EventManager.TriggerLose?.Invoke();
         }
     }
 }
