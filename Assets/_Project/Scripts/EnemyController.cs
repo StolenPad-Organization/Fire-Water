@@ -69,11 +69,14 @@ public class EnemyController : MonoBehaviour
             //deathVFX.transform.SetParent(null);
             //deathVFX.Play();
             if (EnemyElement == Element.Frost)
-                Destroy(gameObject);
+            {
+                Invincible = true;
+                Destroy(gameObject, 0.75f);
+            }
             else
             {
                 Invincible = true;
-                Destroy(gameObject,0.35f);
+                Destroy(gameObject, 0.35f);
             }
         }
     }
