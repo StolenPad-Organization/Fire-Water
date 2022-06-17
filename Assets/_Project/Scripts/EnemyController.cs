@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
     public Transform model;
     [SerializeField] private Transform Water;
     [SerializeField] private float minYPos;
+    [SerializeField] private FireDamagingEffect fireDamagingEffect;
+    bool Invincible;
 
     void Start()
     {
@@ -46,9 +48,10 @@ public class EnemyController : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
-        model.transform.localScale = Vector3.one;
-        model.transform.DOScale(Vector3.one * 0.8f, 0.15f).OnComplete(() => model.transform.DOScale(Vector3.one, 0.15f));
-        model.transform.DOShakePosition(0.25f).OnComplete(() => model.transform.localPosition = Vector3.zero);
+        if (Invincible) return;
+        //model.transform.localScale = Vector3.one;
+        //model.transform.DOScale(Vector3.one * 0.8f, 0.15f).OnComplete(() => model.transform.DOScale(Vector3.one, 0.15f));
+        //model.transform.DOShakePosition(0.25f).OnComplete(() => model.transform.localPosition = Vector3.zero);
         health -= damage;
         healthBar.UpdateHealthUI(health / maxHealth);
         if(EnemyElement == Element.Frost)
@@ -56,17 +59,28 @@ public class EnemyController : MonoBehaviour
             Water.localScale = new Vector3(Mathf.Lerp(1.5f, 0.5f, health / maxHealth), 1.5f, Mathf.Lerp(1.5f, 0.5f, health / maxHealth));
             model.localPosition = new Vector3(0, Mathf.Lerp(minYPos, 0f, health / maxHealth), 0);
         }
+        else
+        {
+            if(fireDamagingEffect != null)
+                fireDamagingEffect.UpdateMaterial(health, maxHealth);
+        }
         if (health <= 0)
         {
             //deathVFX.transform.SetParent(null);
             //deathVFX.Play();
-            Destroy(gameObject);
+            if (EnemyElement == Element.Frost)
+                Destroy(gameObject);
+            else
+            {
+                Invincible = true;
+                Destroy(gameObject,0.35f);
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")&& !Invincible)
         {
             //other.tag = "Untagged";
             Destroy(transform.parent.gameObject);

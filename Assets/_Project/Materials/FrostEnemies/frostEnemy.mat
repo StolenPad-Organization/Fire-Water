@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: frostEnemy
+  m_Shader: {fileID: -6465566751694194690, guid: 197bad08a13063c45aea17b12b4bfea9, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Vector1_1a5394610b854f1fbaf3ea4c342315f5: 1
+    - Vector1_6EABA19D: 0.381
+    - Vector1_C0F578B9: 32
+    - Vector1_DD99090B: 0.06
+    m_Colors:
+    - Color_60F70F8: {r: 0, g: 0.48820376, b: 1, a: 0}
+    - Color_BE79F819: {r: 7.056604, g: 7.3394437, b: 8, a: 0}
+    - Color_D1D4F53B: {r: 14.259478, g: 14.259478, b: 14.259478, a: 0}
+    - MainColor: {r: 0, g: 0.4858756, b: 1, a: 0}
+    - Vector2_b608667b5bbf44dcab0bb2991e849e77: {r: 0.25, g: 0.25, b: 0, a: 0}
+  m_BuildTextureStacks: []
