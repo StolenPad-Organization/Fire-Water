@@ -76,7 +76,7 @@ public class EnemyController : MonoBehaviour
             else
             {
                 Invincible = true;
-                Destroy(gameObject, 0.35f);
+                fireDamagingEffect.Dissolve();
             }
         }
     }

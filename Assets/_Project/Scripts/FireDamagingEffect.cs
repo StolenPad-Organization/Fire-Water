@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class FireDamagingEffect : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class FireDamagingEffect : MonoBehaviour
     [SerializeField] private float speed1, speed2;
     [SerializeField] private Vector2 limit1, limit2;
     [SerializeField] private Animator anim;
+    [SerializeField] private Material dissolveMaterial;
+    [SerializeField] private ParticleSystem fireSmoke;
 
     private void Start()
     {
@@ -45,5 +48,23 @@ public class FireDamagingEffect : MonoBehaviour
         modelRenderer.material.SetColor("color_2", Color.Lerp(Color2m, Color2, health / maxHealth));
         modelRenderer.material.SetColor("color_3", Color.Lerp(Color3m, Color3, health / maxHealth));
         anim.SetFloat("Speed",Mathf.Lerp(0.3f,1f, health / maxHealth));
+    }
+
+    public void Dissolve()
+    {
+        StartCoroutine(DissolveAnimation());
+    }
+
+    IEnumerator DissolveAnimation()
+    {
+        yield return new WaitForSecondsRealtime(0.25f);
+        fireSmoke.Play();
+        fireSmoke.transform.SetParent(null);
+        modelRenderer.material = dissolveMaterial;
+        float amount = 0f;
+        //modelRenderer.material.SetFloat("_DissolveAmount", 0.5f);
+        DOTween.To(() => amount, x => amount = x, 1.0f, 1.0f).OnUpdate(() => modelRenderer.material.SetFloat("_DissolveAmount", amount));
+        yield return new WaitForSecondsRealtime(1.25f);
+        Destroy(gameObject);
     }
 }
