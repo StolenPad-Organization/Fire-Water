@@ -157,8 +157,8 @@ MonoBehaviour:
   liquidTank: {fileID: 2312149995718170043}
   liquidTankBG: {fileID: 8154104243379752788}
   liquidCapacity: {x: 0, y: 15}
-  liquidValue: 15
-  liquidValueBG: 15
+  liquidValue: 17
+  liquidValueBG: 17
   fillRate: 0.8
   matchLiquid: 1
   lavaPool: {fileID: 5397490400491817095}
@@ -365,8 +365,8 @@ MonoBehaviour:
   liquidTank: {fileID: 3626341501418281733}
   liquidTankBG: {fileID: 6924306107665625930}
   liquidCapacity: {x: 0, y: 15}
-  liquidValue: 15
-  liquidValueBG: 15
+  liquidValue: 17
+  liquidValueBG: 17
   fillRate: 0.8
   matchLiquid: 1
   lavaPool: {fileID: 0}
@@ -715,7 +715,7 @@ MonoBehaviour:
   autoStartPosition: 0
   follow: 1
   preserveUniformSpeedWithOffset: 0
-  _followSpeed: 6
+  _followSpeed: 8
   _followDuration: 1
   _startPosition: 0
   editorSetPosition: 1

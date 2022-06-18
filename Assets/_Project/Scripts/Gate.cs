@@ -58,6 +58,7 @@ public class Gate : MonoBehaviour
             case Operator.Plus:
                 playerWeapon.matchLiquid = false;
                 playerWeapon.liquidValueBG += amount;
+                playerWeapon.liquidValueBG = Mathf.Clamp(playerWeapon.liquidValueBG, playerWeapon.liquidCapacity.x, playerWeapon.liquidCapacity.y);
                 DOTween.To(() => playerWeapon.liquidValue, x => playerWeapon.liquidValue = x, playerWeapon.liquidValueBG, 0.4f)
                     .OnComplete(() => playerWeapon.matchLiquid = true);
                 gainVFX.Play();
@@ -65,6 +66,7 @@ public class Gate : MonoBehaviour
             case Operator.Minus:
                 playerWeapon.matchLiquid = false;
                 playerWeapon.liquidValue -= amount;
+                playerWeapon.liquidValue = Mathf.Clamp(playerWeapon.liquidValue, playerWeapon.liquidCapacity.x, playerWeapon.liquidCapacity.y);
                 DOTween.To(() => playerWeapon.liquidValueBG, x => playerWeapon.liquidValueBG = x, playerWeapon.liquidValue, 0.4f)
                     .OnComplete(() => playerWeapon.matchLiquid = true);
                 drainVFX.Play();
@@ -72,6 +74,7 @@ public class Gate : MonoBehaviour
             case Operator.Devide:
                 playerWeapon.matchLiquid = false;
                 playerWeapon.liquidValue /= amount;
+                playerWeapon.liquidValue = Mathf.Clamp(playerWeapon.liquidValue, playerWeapon.liquidCapacity.x, playerWeapon.liquidCapacity.y);
                 DOTween.To(() => playerWeapon.liquidValueBG, x => playerWeapon.liquidValueBG = x, playerWeapon.liquidValue, 0.4f)
                     .OnComplete(() => playerWeapon.matchLiquid = true);
                 drainVFX.Play();
@@ -79,6 +82,7 @@ public class Gate : MonoBehaviour
             case Operator.Multiply:
                 playerWeapon.matchLiquid = false;
                 playerWeapon.liquidValueBG *= amount;
+                playerWeapon.liquidValueBG = Mathf.Clamp(playerWeapon.liquidValueBG, playerWeapon.liquidCapacity.x, playerWeapon.liquidCapacity.y);
                 DOTween.To(() => playerWeapon.liquidValue, x => playerWeapon.liquidValue = x, playerWeapon.liquidValueBG, 0.4f)
                     .OnComplete(() => playerWeapon.matchLiquid = true);
                 gainVFX.Play();
