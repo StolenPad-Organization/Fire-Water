@@ -12,13 +12,14 @@ public class PlayerWeapon : MonoBehaviour
     [Header ("Liquid")]
     [SerializeField] private Renderer liquidTank;
     [SerializeField] private Renderer liquidTankBG;
-    [SerializeField] private Vector2 liquidCapacity;
+    public Vector2 liquidCapacity;
     public float liquidValue;
     public float liquidValueBG;
     [SerializeField] private float fillRate;
     private bool canFire = false;
     public bool matchLiquid = true;
     [SerializeField] private GameObject lavaPool;
+
     private void OnEnable()
     {
         switch (weaponElement)
