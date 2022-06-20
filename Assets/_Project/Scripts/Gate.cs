@@ -48,6 +48,7 @@ public class Gate : MonoBehaviour
                 default:
                     break;
             }
+            gameObject.SetActive(false);
         }
     }
 

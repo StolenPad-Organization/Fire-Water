@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemiesDetector : MonoBehaviour
 {
-    [SerializeField] private List<EnemyController> fireEnemiesList;
-    [SerializeField] private List<EnemyController> frostEnemiesList;
+    public List<EnemyController> fireEnemiesList = new List<EnemyController>();
+    public List<EnemyController> frostEnemiesList = new List<EnemyController>();
     List<EnemyController> removedEnemies = new List<EnemyController>();
 
     private void OnTriggerEnter(Collider other)
@@ -65,7 +65,7 @@ public class EnemiesDetector : MonoBehaviour
         removedEnemies.Clear();
         foreach (var item in frostEnemiesList)
         {
-            if(!item)
+            if(!item || item.health <= 0)
                 removedEnemies.Add(item);
         }
         foreach (var item in removedEnemies)
@@ -76,7 +76,7 @@ public class EnemiesDetector : MonoBehaviour
         removedEnemies.Clear();
         foreach (var item in fireEnemiesList)
         {
-            if (!item)
+            if (!item || item.health <= 0)
                 removedEnemies.Add(item);
         }
         foreach (var item in removedEnemies)

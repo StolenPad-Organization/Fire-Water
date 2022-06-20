@@ -79,6 +79,7 @@ public class FireDamagingEffect : MonoBehaviour
         rocksHolder.transform.SetParent(null);
         rocksHolder.SetActive(true);
         yield return new WaitForSecondsRealtime(1.25f);
+        Destroy(rocksHolder, 1.0f);
         Destroy(gameObject);
     }
 

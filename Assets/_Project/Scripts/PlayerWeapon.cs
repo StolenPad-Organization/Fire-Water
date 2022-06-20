@@ -19,6 +19,7 @@ public class PlayerWeapon : MonoBehaviour
     private bool canFire = false;
     public bool matchLiquid = true;
     [SerializeField] private GameObject lavaPool;
+    [SerializeField] private EnemiesDetector enemiesDetector;
 
     private void OnEnable()
     {
@@ -86,6 +87,26 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Update()
     {
+        switch (weaponElement)
+        {
+            case Element.Fire:
+                if (enemiesDetector.frostEnemiesList.Count > 0)
+                {
+                    Transform closestTarget = enemiesDetector.frostEnemiesList[0].transform;
+                    transform.LookAt(closestTarget);
+                }
+                break;
+            case Element.Frost:
+                if (enemiesDetector.fireEnemiesList.Count > 0)
+                {
+                    Transform closestTarget = enemiesDetector.fireEnemiesList[0].transform;
+                    transform.LookAt(closestTarget);
+                }
+                break;
+            default:
+                break;
+        }
+
         UpdateLiquid();
         if (canFire)
         {

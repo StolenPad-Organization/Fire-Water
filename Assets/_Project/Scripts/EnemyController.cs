@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
 {
     public Element EnemyElement;
     [SerializeField] private float speed;
-    [SerializeField] private int health;
+    [SerializeField] public int health;
     [SerializeField] private float maxHealth;
     [SerializeField] private HealthBar healthBar;
     [SerializeField] private GameObject[] Models;
