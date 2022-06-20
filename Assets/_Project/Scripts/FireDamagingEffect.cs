@@ -16,6 +16,8 @@ public class FireDamagingEffect : MonoBehaviour
     [SerializeField] private Animator anim;
     [SerializeField] private Material dissolveMaterial;
     [SerializeField] private ParticleSystem fireSmoke;
+    [SerializeField] private GameObject rocksHolder;
+    [SerializeField] private Rigidbody[] rocks;
 
     private void Start()
     {
@@ -63,8 +65,14 @@ public class FireDamagingEffect : MonoBehaviour
         modelRenderer.material = dissolveMaterial;
         float amount = 0f;
         //modelRenderer.material.SetFloat("_DissolveAmount", 0.5f);
+        rocksHolder.transform.SetParent(null);
+        rocksHolder.SetActive(true);
+        //foreach (Rigidbody rock in rocks)
+        //{
+        //    rock.velocity = Vector3.down * 10;
+        //}
         DOTween.To(() => amount, x => amount = x, 1.0f, 1.0f).OnUpdate(() => modelRenderer.material.SetFloat("_DissolveAmount", amount));
         yield return new WaitForSecondsRealtime(1.25f);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

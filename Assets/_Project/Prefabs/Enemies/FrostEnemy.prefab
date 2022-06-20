@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyElement: 1
   speed: -18.5
-  health: 100
+  health: 250
   maxHealth: 0
   healthBar: {fileID: 5122548749544008699}
   Models:

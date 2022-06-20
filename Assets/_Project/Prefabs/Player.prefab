@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponElement: 0
   Tag: FrostEnemy
-  damage: 7
+  damage: 1
   weaponVFX: {fileID: 9781176465662259}
   liquidTank: {fileID: 2312149995718170043}
   liquidTankBG: {fileID: 8154104243379752788}
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponElement: 1
   Tag: FireEnemy
-  damage: 7
+  damage: 1
   weaponVFX: {fileID: 9781177660247329}
   liquidTank: {fileID: 3626341501418281733}
   liquidTankBG: {fileID: 6924306107665625930}
