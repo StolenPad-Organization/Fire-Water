@@ -49,6 +49,7 @@ public class EnemyController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (Invincible) return;
+
         //model.transform.localScale = Vector3.one;
         //model.transform.DOScale(Vector3.one * 0.8f, 0.15f).OnComplete(() => model.transform.DOScale(Vector3.one, 0.15f));
         //model.transform.DOShakePosition(0.25f).OnComplete(() => model.transform.localPosition = Vector3.zero);
@@ -62,7 +63,14 @@ public class EnemyController : MonoBehaviour
         else
         {
             if(fireDamagingEffect != null)
+            {
                 fireDamagingEffect.UpdateMaterial(health, maxHealth);
+                fireDamagingEffect.StartFog();
+                model.transform.localScale = Vector3.one;
+                model.transform.DOScale(Vector3.one * 0.9f, 0.15f).OnComplete(() => model.transform.DOScale(Vector3.one, 0.15f));
+                model.transform.DOShakePosition(0.15f).OnComplete(() => model.transform.localPosition = Vector3.zero);
+            }
+
         }
         if (health <= 0)
         {

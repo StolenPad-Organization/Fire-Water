@@ -18,6 +18,7 @@ public class FireDamagingEffect : MonoBehaviour
     [SerializeField] private ParticleSystem fireSmoke;
     [SerializeField] private GameObject rocksHolder;
     [SerializeField] private Transform[] rocks;
+    [SerializeField] private ParticleSystem fogVFX;
 
     private void Start()
     {
@@ -60,20 +61,29 @@ public class FireDamagingEffect : MonoBehaviour
     IEnumerator DissolveAnimation()
     {
         yield return new WaitForSecondsRealtime(0.25f);
+        fogVFX.Stop();
         fireSmoke.Play();
         fireSmoke.transform.SetParent(null);
         modelRenderer.material = dissolveMaterial;
         float amount = 0f;
         //modelRenderer.material.SetFloat("_DissolveAmount", 0.5f);
-        rocksHolder.transform.localEulerAngles += new Vector3(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
+        //rocksHolder.transform.localEulerAngles += new Vector3(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
+        
+        //foreach (Transform rock in rocks)
+        //{
+        //    rock.DOScale(Random.Range(1.8f,2.0f), 0.1f).OnComplete(() => rock.DOScale(1.0f, 0.1f));
+        //}
+        DOTween.To(() => amount, x => amount = x, 1.0f, 1.0f).OnUpdate(() => modelRenderer.material.SetFloat("_DissolveAmount", amount));
+        yield return new WaitForSecondsRealtime(0.25f);
         rocksHolder.transform.SetParent(null);
         rocksHolder.SetActive(true);
-        foreach (Transform rock in rocks)
-        {
-            rock.DOScale(Random.Range(1.8f,2.0f), 0.1f).OnComplete(() => rock.DOScale(1.0f, 0.1f));
-        }
-        DOTween.To(() => amount, x => amount = x, 1.0f, 1.0f).OnUpdate(() => modelRenderer.material.SetFloat("_DissolveAmount", amount));
         yield return new WaitForSecondsRealtime(1.25f);
         Destroy(gameObject);
+    }
+
+    public void StartFog()
+    {
+        if(!fogVFX.isPlaying)
+            fogVFX.Play();
     }
 }
