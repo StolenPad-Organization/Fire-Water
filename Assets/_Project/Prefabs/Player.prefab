@@ -152,14 +152,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponElement: 0
   Tag: FrostEnemy
-  damage: 1
+  damage: 10
   weaponVFX: {fileID: 9781176465662259}
   liquidTank: {fileID: 2312149995718170043}
   liquidTankBG: {fileID: 8154104243379752788}
-  liquidCapacity: {x: 0, y: 15}
-  liquidValue: 17
-  liquidValueBG: 17
-  fillRate: 0.8
+  liquidCapacity: {x: 0, y: 16}
+  liquidValue: 15
+  liquidValueBG: 15
+  fillRate: 1.8
   matchLiquid: 1
   lavaPool: {fileID: 5397490400491817095}
 --- !u!65 &7054514086897487669
@@ -360,14 +360,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponElement: 1
   Tag: FireEnemy
-  damage: 1
+  damage: 10
   weaponVFX: {fileID: 9781177660247329}
   liquidTank: {fileID: 3626341501418281733}
   liquidTankBG: {fileID: 6924306107665625930}
-  liquidCapacity: {x: 0, y: 15}
-  liquidValue: 17
-  liquidValueBG: 17
-  fillRate: 0.8
+  liquidCapacity: {x: 0, y: 16}
+  liquidValue: 15
+  liquidValueBG: 15
+  fillRate: 1.8
   matchLiquid: 1
   lavaPool: {fileID: 0}
 --- !u!65 &8683980226178465065
@@ -423,14 +423,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9781177868378855}
-  m_LocalRotation: {x: -0.000000001318666, y: 0.99999976, z: -0.0000018987313, w: -0.0006944983}
+  m_LocalRotation: {x: 0, y: 0.9999998, z: -0, w: -0.00069808104}
   m_LocalPosition: {x: 0.33184063, y: 0.0009072398, z: 13.387898}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9781176599880049}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180.085, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180.08, z: 0}
 --- !u!114 &9781177868378853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,16 +642,16 @@ MonoBehaviour:
       percent: 1
     optimizedIndices: 
     sampleMode: 0
-    clipFrom: 0.11100000143051147
+    clipFrom: 0.3009999990463257
     clipTo: 1
     loopSamples: 0
   clipFromSample:
-    position: {x: 0.34911975, y: 0.00095448026, z: 25.570772}
+    position: {x: 0.16982383, y: 0.00046429195, z: -154.94676}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.0014892744, y: -0.0000040716204, z: -0.99999887}
+    forward: {x: -0.000679512, y: -0.0000018577601, z: -0.99999976}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
-    percent: 0.11100000143051147
+    percent: 0.3009999990463257
   clipToSample:
     position: {x: 0, y: 0, z: -799.7732}
     up: {x: 0, y: 1, z: 0}
@@ -660,12 +660,12 @@ MonoBehaviour:
     size: 1
     percent: 1
   _loopSamples: 0
-  _clipFrom: 0.11100000143051147
+  _clipFrom: 0.3009999990463257
   _clipTo: 1
   animClipFrom: 0
   animClipTo: 1
-  _sampleCount: 27
-  startSampleIndex: 3
+  _sampleCount: 22
+  startSampleIndex: 8
   multithreaded: 0
   buildOnAwake: 1
   buildOnEnable: 0
@@ -697,19 +697,19 @@ MonoBehaviour:
   targetRigidbody2D: {fileID: 0}
   targetTransform: {fileID: 9781177868378854}
   _result:
-    position: {x: 0.33184063, y: 0.0009072398, z: 13.387898}
+    position: {x: 0.16982383, y: 0.00046429195, z: -154.94676}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.0013889961, y: -0.0000037974633, z: -0.999999}
+    forward: {x: -0.000679512, y: -0.0000018577601, z: -0.99999976}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
-    percent: 0.01687415323311511
+    percent: 0
   _finalResult:
-    position: {x: 0.33184063, y: 0.0009072398, z: 13.387898}
+    position: {x: 0.16982383, y: 0.00046429195, z: -154.94676}
     up: {x: 0, y: 1, z: 0}
-    forward: {x: -0.0013889961, y: -0.0000037974633, z: -0.999999}
+    forward: {x: -0.000679512, y: -0.0000018577601, z: -0.99999976}
     color: {r: 1, g: 1, b: 1, a: 1}
     size: 1
-    percent: 0.01687415323311511
+    percent: 0
   wrapMode: 0
   followMode: 0
   autoStartPosition: 0
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 8922573375309841566}
-  MaxWobble: 0.07
+  MaxWobble: 0.12
   WobbleSpeed: 0.6
   Recovery: 3
 --- !u!1 &3546147553036046191
@@ -944,7 +944,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 3771467990993835825}
-  MaxWobble: 0.07
+  MaxWobble: 0.12
   WobbleSpeed: 0.6
   Recovery: 3
 --- !u!1 &4130023195880692563
@@ -975,7 +975,7 @@ Transform:
   m_GameObject: {fileID: 4130023195880692563}
   m_LocalRotation: {x: -2.842171e-14, y: -0, z: -5.684342e-14, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.999, y: 1, z: 0.999}
+  m_LocalScale: {x: 1, y: 1, z: 0.999}
   m_Children: []
   m_Father: {fileID: 4477106094309593721}
   m_RootOrder: 1
@@ -1042,7 +1042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 8898998990753526071}
-  MaxWobble: 0.07
+  MaxWobble: 0.12
   WobbleSpeed: 0.6
   Recovery: 3
 --- !u!1 &4952506703231069014
@@ -1141,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reference: {fileID: 5645948839787476484}
-  MaxWobble: 0.07
+  MaxWobble: 0.12
   WobbleSpeed: 0.6
   Recovery: 3
 --- !u!1 &5233064367168013115

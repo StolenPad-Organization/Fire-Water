@@ -45,6 +45,7 @@ public class PlayerMovementController : MonoBehaviour
         //inputSpeed = Database.Instance.GetPlayerData().PlayerSwerveSpeed;
 
         ActivateMovement();
+        Application.targetFrameRate = 60;
     }
 
     //private void ObstacleCollision() // When Sword's handle hit the any obstacle, this method activate
