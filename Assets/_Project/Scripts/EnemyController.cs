@@ -66,9 +66,9 @@ public class EnemyController : MonoBehaviour
             {
                 fireDamagingEffect.UpdateMaterial(health, maxHealth);
                 fireDamagingEffect.StartFog();
-                model.transform.localScale = Vector3.one;
-                model.transform.DOScale(Vector3.one * 0.9f, 0.15f).OnComplete(() => model.transform.DOScale(Vector3.one, 0.15f));
-                model.transform.DOShakePosition(0.15f).OnComplete(() => model.transform.localPosition = Vector3.zero);
+                //model.transform.localScale = Vector3.one;
+                //model.transform.DOScale(Vector3.one * 0.9f, 0.15f).OnComplete(() => model.transform.DOScale(Vector3.one, 0.15f));
+                //model.transform.DOShakePosition(0.15f).OnComplete(() => model.transform.localPosition = Vector3.zero);
             }
 
         }

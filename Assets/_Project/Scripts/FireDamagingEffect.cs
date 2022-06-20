@@ -19,6 +19,7 @@ public class FireDamagingEffect : MonoBehaviour
     [SerializeField] private GameObject rocksHolder;
     [SerializeField] private Transform[] rocks;
     [SerializeField] private ParticleSystem fogVFX;
+    [SerializeField] private ParticleSystem hitVFX;
 
     private void Start()
     {
@@ -84,6 +85,9 @@ public class FireDamagingEffect : MonoBehaviour
     public void StartFog()
     {
         if(!fogVFX.isPlaying)
-            fogVFX.Play();
+        fogVFX.Play();
+
+        if (!hitVFX.isPlaying)
+            hitVFX.Play();
     }
 }
