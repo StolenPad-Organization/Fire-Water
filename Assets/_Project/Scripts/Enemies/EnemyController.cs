@@ -43,7 +43,7 @@ public class EnemyController : MonoBehaviour
     {
         //transform.Translate(Vector3.forward * speed * Time.deltaTime);
         if(player != null)
-            agent.SetDestination(player.position + Vector3.forward * 20f);
+            agent.SetDestination(player.position);
     }
     public void TakeDamage(int damage)
     {
@@ -97,9 +97,9 @@ public class EnemyController : MonoBehaviour
     {
         if (other.CompareTag("Player")&& !Invincible)
         {
-            //other.tag = "Untagged";
+            other.tag = "Untagged";
             Destroy(transform.parent.gameObject);
-            //EventManager.TriggerLose?.Invoke();
+            EventManager.TriggerLose?.Invoke();
         }
     }
 }
