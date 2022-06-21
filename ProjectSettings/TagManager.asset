@@ -9,6 +9,7 @@ TagManager:
   - MWFXProjectile
   - BlueSwitch
   - RedSwitch
+  - Gate
   layers:
   - Default
   - TransparentFX
