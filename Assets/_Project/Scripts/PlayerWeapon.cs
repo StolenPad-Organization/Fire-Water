@@ -10,12 +10,15 @@ public class PlayerWeapon : MonoBehaviour
     List<EnemyController> removedList;
     [SerializeField] private ParticleSystem weaponVFX;
     [SerializeField] private ParticleSystem weaponMuzzleVFX;
-    [Header ("Liquid")]
+    [Header("Liquid")]
     [SerializeField] private Renderer liquidTank;
     [SerializeField] private Renderer liquidTankBG;
     public Vector2 liquidCapacity;
+    public Vector2 realLiquidCapacity;
     public float liquidValue;
+    public float realLiquidValue;
     public float liquidValueBG;
+    public float realLiquidValueBG;
     [SerializeField] private float fillRate;
     private bool canFire = false;
     public bool matchLiquid = true;
@@ -37,7 +40,7 @@ public class PlayerWeapon : MonoBehaviour
             default:
                 break;
         }
-        
+
     }
 
     private void OnDisable()
@@ -137,9 +140,20 @@ public class PlayerWeapon : MonoBehaviour
         if (canFire)
         {
             liquidValue -= fillRate * Time.deltaTime;
-            liquidValue = Mathf.Clamp(liquidValue, liquidCapacity.x, liquidCapacity.y);
-            if (matchLiquid)
-                liquidValueBG = liquidValue;
+        }
+
+        liquidValue = Mathf.Clamp(liquidValue, liquidCapacity.x, liquidCapacity.y);
+        float t = Mathf.InverseLerp(liquidCapacity.x, liquidCapacity.y, liquidValue);
+        realLiquidValue = Mathf.Lerp(realLiquidCapacity.x, realLiquidCapacity.y, t);
+        if (matchLiquid)
+        {
+            liquidValueBG = liquidValue;
+            realLiquidValueBG = realLiquidValue;
+        }
+
+        if (canFire)
+        {
+
             if (liquidValue == liquidCapacity.x)
             {
                 canFire = false;
@@ -148,8 +162,9 @@ public class PlayerWeapon : MonoBehaviour
                     weaponMuzzleVFX.Stop(true);
             }
         }
-        liquidTank.material.SetFloat("Liquid_Fill", liquidValue);
-        liquidTankBG.material.SetFloat("Liquid_Fill", liquidValueBG);
+
+        liquidTank.material.SetFloat("Liquid_Fill", realLiquidValue);
+        liquidTankBG.material.SetFloat("Liquid_Fill", realLiquidValueBG);
     }
 
     private PlayerWeapon GetPlayerWeapon()
@@ -167,13 +182,13 @@ public class PlayerWeapon : MonoBehaviour
                 if (weaponVFX.isStopped)
                 {
                     weaponVFX.Play(true);
-                    if(weaponMuzzleVFX != null)
+                    if (weaponMuzzleVFX != null)
                         weaponMuzzleVFX.Play(true);
                     if (lavaPool != null)
                         lavaPool.SetActive(true);
                 }
-                    
-            }   
+
+            }
         }
         else
         {

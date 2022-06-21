@@ -43,5 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14c6e62d779147ae8c0d9a44ce27e91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: eaafe5b50edb24813b84ee0c12660176, type: 2}
-  levelCount: 12
+  levelCount: 5

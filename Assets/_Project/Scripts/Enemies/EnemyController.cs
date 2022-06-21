@@ -42,7 +42,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         //transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        if(player != null)
+        if(player != null && agent.gameObject.activeSelf && agent.enabled)
             agent.SetDestination(player.position);
     }
     public void TakeDamage(int damage)
@@ -82,8 +82,10 @@ public class EnemyController : MonoBehaviour
             //deathVFX.Play();
             if (EnemyElement == Element.Frost)
             {
+                agent.speed = 0;
+                agent.enabled = false;
                 Invincible = true;
-                Destroy(gameObject, 0.75f);
+                Destroy(gameObject, 0.4f);
             }
             else
             {
@@ -95,11 +97,19 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")&& !Invincible)
+        if (other.CompareTag("Player") && !Invincible)
         {
             other.tag = "Untagged";
-            Destroy(transform.parent.gameObject);
-            EventManager.TriggerLose?.Invoke();
+            //Destroy(transform.parent.gameObject);
+            //EventManager.TriggerLose?.Invoke();
+            StartCoroutine(PlayerDeath());
         }
+    }
+
+    IEnumerator PlayerDeath()
+    {
+        EventManager.PlayerDeath?.Invoke();
+        yield return new WaitForSecondsRealtime(3.0f);
+        EventManager.TriggerLose?.Invoke();
     }
 }

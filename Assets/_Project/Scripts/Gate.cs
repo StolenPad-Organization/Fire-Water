@@ -26,7 +26,7 @@ public class Gate : MonoBehaviour
                 gateText.text = "/" + amount;
                 break;
             case Operator.Multiply:
-                gateText.text = "*" + amount;
+                gateText.text = "x" + amount;
                 break;
             default:
                 break;

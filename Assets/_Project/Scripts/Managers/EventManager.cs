@@ -9,6 +9,7 @@ public static class EventManager
     public static Action<bool> OpenFireWeapon;
     public static Action<bool> OpenFrostWeapon;
     public static Action<int, Transform> AddMoney;
+    public static Action PlayerDeath;
     #endregion
 
     #region Ending Events

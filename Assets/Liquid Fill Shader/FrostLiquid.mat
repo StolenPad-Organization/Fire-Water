@@ -37,7 +37,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Glow_Radius: 4
-    - Liquid_Fill: 15
+    - Liquid_Fill: 0
     - Vector1_ac4e1ae01fb942eeaf2fa9d533c27e50: 2
     - _Smoothness: 0.5
     - _WobbleX: 0
