@@ -9,6 +9,7 @@ public class PlayerWeapon : MonoBehaviour
     List<EnemyController> enemiesList;
     List<EnemyController> removedList;
     [SerializeField] private ParticleSystem weaponVFX;
+    [SerializeField] private ParticleSystem weaponMuzzleVFX;
     [Header ("Liquid")]
     [SerializeField] private Renderer liquidTank;
     [SerializeField] private Renderer liquidTankBG;
@@ -61,6 +62,8 @@ public class PlayerWeapon : MonoBehaviour
         enemiesList = new List<EnemyController>();
         removedList = new List<EnemyController>();
         weaponVFX.Stop(true);
+        if (weaponMuzzleVFX != null)
+            weaponMuzzleVFX.Stop(true);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -141,6 +144,8 @@ public class PlayerWeapon : MonoBehaviour
             {
                 canFire = false;
                 weaponVFX.Stop(true);
+                if (weaponMuzzleVFX != null)
+                    weaponMuzzleVFX.Stop(true);
             }
         }
         liquidTank.material.SetFloat("Liquid_Fill", liquidValue);
@@ -162,6 +167,8 @@ public class PlayerWeapon : MonoBehaviour
                 if (weaponVFX.isStopped)
                 {
                     weaponVFX.Play(true);
+                    if(weaponMuzzleVFX != null)
+                        weaponMuzzleVFX.Play(true);
                     if (lavaPool != null)
                         lavaPool.SetActive(true);
                 }
@@ -172,9 +179,10 @@ public class PlayerWeapon : MonoBehaviour
         {
             canFire = false;
             weaponVFX.Stop(true);
+            if (weaponMuzzleVFX != null)
+                weaponMuzzleVFX.Stop(true);
             if (lavaPool != null)
                 lavaPool.SetActive(false);
         }
-
     }
 }
