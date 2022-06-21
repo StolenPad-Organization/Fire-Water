@@ -19,6 +19,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Transform Water;
     [SerializeField] private float minYPos;
     [SerializeField] private FireDamagingEffect fireDamagingEffect;
+    [SerializeField] private FrostDamagingEffect frostDamagingEffect;
     bool Invincible;
 
     void Start()
@@ -57,6 +58,10 @@ public class EnemyController : MonoBehaviour
         {
             Water.localScale = new Vector3(Mathf.Lerp(1.5f, 0.5f, health / maxHealth), 1.5f, Mathf.Lerp(1.5f, 0.5f, health / maxHealth));
             model.localPosition = new Vector3(0, Mathf.Lerp(minYPos, 0f, health / maxHealth), 0);
+            if(frostDamagingEffect != null)
+            {
+                frostDamagingEffect.PlayHitEffect();
+            }
         }
         else
         {
