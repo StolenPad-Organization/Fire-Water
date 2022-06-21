@@ -74,6 +74,7 @@ public class EnemyController : MonoBehaviour
         }
         if (health <= 0)
         {
+            EventManager.AddMoney?.Invoke(100, transform);
             //deathVFX.transform.SetParent(null);
             //deathVFX.Play();
             if (EnemyElement == Element.Frost)
