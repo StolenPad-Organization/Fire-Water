@@ -74,12 +74,12 @@ public class FireDamagingEffect : MonoBehaviour
         //{
         //    rock.DOScale(Random.Range(1.8f,2.0f), 0.1f).OnComplete(() => rock.DOScale(1.0f, 0.1f));
         //}
-        DOTween.To(() => amount, x => amount = x, 1.0f, 1.0f).OnUpdate(() => modelRenderer.material.SetFloat("_DissolveAmount", amount));
+        DOTween.To(() => amount, x => amount = x, 1.0f, 0.85f).OnUpdate(() => modelRenderer.material.SetFloat("_DissolveAmount", amount));
         yield return new WaitForSecondsRealtime(0.25f);
         rocksHolder.transform.SetParent(null);
         rocksHolder.SetActive(true);
-        yield return new WaitForSecondsRealtime(1.25f);
-        Destroy(rocksHolder, 1.0f);
+        yield return new WaitForSecondsRealtime(0.5f);
+        Destroy(rocksHolder, 0.5f);
         Destroy(gameObject);
     }
 

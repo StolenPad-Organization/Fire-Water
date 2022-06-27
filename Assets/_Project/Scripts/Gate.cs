@@ -12,21 +12,28 @@ public class Gate : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gateText;
     [SerializeField] private ParticleSystem gainVFX;
     [SerializeField] private ParticleSystem drainVFX;
+    [SerializeField] private Renderer Indication;
+    [SerializeField] private Material goodMat;
+    [SerializeField] private Material badMat;
     void Start()
     {
         switch (Operator)
         {
             case Operator.Plus:
                 gateText.text = "+" + amount;
+                Indication.material = goodMat;
                 break;
             case Operator.Minus:
                 gateText.text = "-" + amount;
+                Indication.material = badMat;
                 break;
             case Operator.Devide:
                 gateText.text = "/" + amount;
+                Indication.material = badMat;
                 break;
             case Operator.Multiply:
                 gateText.text = "x" + amount;
+                Indication.material = goodMat;
                 break;
             default:
                 break;
