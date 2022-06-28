@@ -22,6 +22,12 @@ public class PlayerController : MonoBehaviour
         EventManager.PlayerDeath -= Death;
     }
 
+    private void Start()
+    {
+        FrostAnim.SetFloat("Blend", 0);
+        FireAnim.SetFloat("Blend", 1);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("RedSwitch"))
