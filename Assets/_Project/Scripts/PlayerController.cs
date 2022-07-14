@@ -74,15 +74,6 @@ public class PlayerController : MonoBehaviour
         {
             transform.parent.Translate(Vector3.forward * 15 * Time.deltaTime);
         }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            ActivateJetpack();
-        }
-        else if (Input.GetKeyDown(KeyCode.Z))
-        {
-            DeactivateJetpack(Element.Frost);
-            DeactivateJetpack(Element.Fire);
-        }
     }
 
     private void ActivateJetpack()

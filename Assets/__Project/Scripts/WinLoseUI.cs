@@ -13,6 +13,7 @@ public class WinLoseUI : MonoBehaviour
     [SerializeField] private Transform losePanel;
     [SerializeField] private Button winButton;
     [SerializeField] private Button loseButton;
+    bool gameEnded;
 
     private void OnEnable ()
     {
@@ -34,11 +35,15 @@ public class WinLoseUI : MonoBehaviour
 
     public void WinUI ()
     {
+        if (gameEnded) return;
+        gameEnded = true;
         ShowPanel(winGroup, winPanel);
     }
 
     public void LoseUI ()
     {
+        if (gameEnded) return;
+        gameEnded = true;
         ShowPanel(loseGroup, losePanel);
     }
 

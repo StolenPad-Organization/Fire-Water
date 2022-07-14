@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private FireDamagingEffect fireDamagingEffect;
     [SerializeField] private FrostDamagingEffect frostDamagingEffect;
     bool Invincible;
+    [SerializeField] private GameObject Coin;
 
     void Start()
     {
@@ -77,6 +78,8 @@ public class EnemyController : MonoBehaviour
         }
         if (health <= 0)
         {
+            Coin.transform.SetParent(null);
+            Coin.SetActive(true);
             EventManager.AddMoney?.Invoke(100, transform);
             //deathVFX.transform.SetParent(null);
             //deathVFX.Play();
