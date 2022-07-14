@@ -208,6 +208,10 @@ public class PlayerWeapon : MonoBehaviour
                 }
 
             }
+            else
+            {
+                EventManager.DeactivateJetpack?.Invoke(weaponElement);
+            }
         }
         else
         {

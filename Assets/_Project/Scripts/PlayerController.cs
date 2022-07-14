@@ -12,16 +12,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator FireAnim;
     [SerializeField] private SplineFollower splineFollower;
     [SerializeField] private GameObject FireBoy;
+    [SerializeField] private GameObject FireTank;
     [SerializeField] private GameObject FrostBoy;
+    [SerializeField] private GameObject FrostTank;
+    private bool finish;
+    private int finishedCharacters;
 
     private void OnEnable()
     {
         EventManager.PlayerDeath += Death;
+        EventManager.DeactivateJetpack += DeactivateJetpack;
     }
 
     private void OnDisable()
     {
         EventManager.PlayerDeath -= Death;
+        EventManager.DeactivateJetpack -= DeactivateJetpack;
     }
 
     private void Start()
@@ -46,7 +52,10 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Finish"))
         {
-            EventManager.TriggerWin?.Invoke();
+            ActivateJetpack();
+            finish = true;
+            splineFollower.enabled = false;
+            //EventManager.TriggerWin?.Invoke();
         }
     }
 
@@ -61,23 +70,77 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (finish)
+        {
+            transform.parent.Translate(Vector3.forward * 15 * Time.deltaTime);
+        }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            FrostAnim.SetBool("JetPack", true);
-            FireAnim.SetBool("JetPack", true);
-            FrostWeapon.GetChild(0).GetComponent<PlayerWeapon>().LockAim();
-            FireWeapon.GetChild(0).GetComponent<PlayerWeapon>().LockAim();
-            FireBoy.transform.DOLocalMoveY(7.0f, 0.25f).OnComplete(() => FireWeapon.GetChild(0).GetComponent<PlayerWeapon>().LockAim());
-            FrostBoy.transform.DOLocalMoveY(7.0f, 0.25f).OnComplete(() => FrostWeapon.GetChild(0).GetComponent<PlayerWeapon>().LockAim());
+            ActivateJetpack();
         }
         else if (Input.GetKeyDown(KeyCode.Z))
         {
-            FrostAnim.SetBool("JetPack", false);
-            FireAnim.SetBool("JetPack", false);
-            FrostWeapon.GetChild(0).GetComponent<PlayerWeapon>().FreeAim();
-            FireWeapon.GetChild(0).GetComponent<PlayerWeapon>().FreeAim();
-            FireBoy.transform.DOLocalMoveY(0.28f, 0.25f);
-            FrostBoy.transform.DOLocalMoveY(0.28f, 0.25f);
+            DeactivateJetpack(Element.Frost);
+            DeactivateJetpack(Element.Fire);
+        }
+    }
+
+    private void ActivateJetpack()
+    {
+        FrostAnim.SetBool("JetPack", true);
+        FireAnim.SetBool("JetPack", true);
+        FrostWeapon.GetChild(0).GetComponent<PlayerWeapon>().LockAim();
+        FireWeapon.GetChild(0).GetComponent<PlayerWeapon>().LockAim();
+        FireBoy.transform.DOLocalMoveY(7.0f, 0.25f).OnComplete(() => FireWeapon.GetChild(0).GetComponent<PlayerWeapon>().LockAim());
+        FrostBoy.transform.DOLocalMoveY(7.0f, 0.25f).OnComplete(() => FrostWeapon.GetChild(0).GetComponent<PlayerWeapon>().LockAim());
+    }
+
+    private void DeactivateJetpack(Element element)
+    {
+        if (!finish) return;
+        finishedCharacters++;
+        if (finishedCharacters >= 2)
+        {
+            finish = false;
+        }
+        switch (element)
+        {
+            case Element.Fire:
+                FireAnim.SetBool("JetPack", false);
+                FireWeapon.GetChild(0).GetComponent<PlayerWeapon>().FreeAim();
+                FireBoy.transform.DOLocalMoveY(0.28f, 0.25f).OnComplete(() =>
+                {
+                    FireWeapon.GetChild(0).GetComponent<PlayerWeapon>().FreeAim();
+                    if (finishedCharacters >= 2)
+                    {
+                        EventManager.TriggerWin?.Invoke();
+                    }
+                    else
+                    {
+                        FireBoy.transform.SetParent(null);
+                        FireTank.transform.SetParent(null);
+                    }
+                });
+                break;
+            case Element.Frost:
+                FrostAnim.SetBool("JetPack", false);
+                FrostWeapon.GetChild(0).GetComponent<PlayerWeapon>().FreeAim();
+                FrostBoy.transform.DOLocalMoveY(0.28f, 0.25f).OnComplete(() =>
+                {
+                    FrostWeapon.GetChild(0).GetComponent<PlayerWeapon>().FreeAim();
+                    if (finishedCharacters >= 2)
+                    {
+                        EventManager.TriggerWin?.Invoke();
+                    }
+                    else
+                    {
+                        FrostBoy.transform.SetParent(null);
+                        FrostTank.transform.SetParent(null);
+                    }
+                });
+                break;
+            default:
+                break;
         }
     }
 }

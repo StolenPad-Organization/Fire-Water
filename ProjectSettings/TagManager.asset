@@ -10,6 +10,8 @@ TagManager:
   - BlueSwitch
   - RedSwitch
   - Gate
+  - JetpackTrigger
+  - Score
   layers:
   - Default
   - TransparentFX
