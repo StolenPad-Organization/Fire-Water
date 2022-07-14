@@ -24,6 +24,8 @@ public class PlayerWeapon : MonoBehaviour
     public bool matchLiquid = true;
     [SerializeField] private GameObject lavaPool;
     [SerializeField] private EnemiesDetector enemiesDetector;
+    private Vector3 originalRotation;
+    private bool canAim = true;
 
     private void OnEnable()
     {
@@ -41,6 +43,19 @@ public class PlayerWeapon : MonoBehaviour
                 break;
         }
 
+    }
+
+    public void LockAim()
+    {
+        transform.localEulerAngles = originalRotation;
+        canAim = false;
+        ActivateWeapon(true);
+    }
+
+    public void FreeAim()
+    {
+        canAim = true;
+        ActivateWeapon(false);
     }
 
     private void OnDisable()
@@ -62,6 +77,7 @@ public class PlayerWeapon : MonoBehaviour
 
     void Start()
     {
+        originalRotation = transform.localEulerAngles;
         enemiesList = new List<EnemyController>();
         removedList = new List<EnemyController>();
         weaponVFX.Stop(true);
@@ -93,24 +109,27 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Update()
     {
-        switch (weaponElement)
+        if (canAim)
         {
-            case Element.Fire:
-                if (enemiesDetector.frostEnemiesList.Count > 0)
-                {
-                    Transform closestTarget = enemiesDetector.frostEnemiesList[0].transform;
-                    transform.LookAt(closestTarget);
-                }
-                break;
-            case Element.Frost:
-                if (enemiesDetector.fireEnemiesList.Count > 0)
-                {
-                    Transform closestTarget = enemiesDetector.fireEnemiesList[0].transform;
-                    transform.LookAt(closestTarget);
-                }
-                break;
-            default:
-                break;
+            switch (weaponElement)
+            {
+                case Element.Fire:
+                    if (enemiesDetector.frostEnemiesList.Count > 0)
+                    {
+                        Transform closestTarget = enemiesDetector.frostEnemiesList[0].transform;
+                        transform.LookAt(closestTarget);
+                    }
+                    break;
+                case Element.Frost:
+                    if (enemiesDetector.fireEnemiesList.Count > 0)
+                    {
+                        Transform closestTarget = enemiesDetector.fireEnemiesList[0].transform;
+                        transform.LookAt(closestTarget);
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
 
         UpdateLiquid();
@@ -174,7 +193,7 @@ public class PlayerWeapon : MonoBehaviour
 
     private void ActivateWeapon(bool Activate)
     {
-        if (Activate)
+        if (Activate || !canAim)
         {
             if (liquidValue > liquidCapacity.x)
             {

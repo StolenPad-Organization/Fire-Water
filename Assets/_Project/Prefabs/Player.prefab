@@ -298,6 +298,8 @@ MonoBehaviour:
   FrostAnim: {fileID: 7128426744359304297}
   FireAnim: {fileID: 2452198837741991207}
   splineFollower: {fileID: 9781177868378853}
+  FireBoy: {fileID: 8420819836919436952}
+  FrostBoy: {fileID: 8018532575200151510}
 --- !u!1 &9781177566479535
 GameObject:
   m_ObjectHideFlags: 0

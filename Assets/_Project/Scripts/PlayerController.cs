@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator FrostAnim;
     [SerializeField] private Animator FireAnim;
     [SerializeField] private SplineFollower splineFollower;
+    [SerializeField] private GameObject FireBoy;
+    [SerializeField] private GameObject FrostBoy;
 
     private void OnEnable()
     {
@@ -55,5 +57,27 @@ public class PlayerController : MonoBehaviour
         FireAnim.SetTrigger("Death");
         FrostWeapon.parent.gameObject.SetActive(false);
         FireWeapon.parent.gameObject.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            FrostAnim.SetBool("JetPack", true);
+            FireAnim.SetBool("JetPack", true);
+            FrostWeapon.GetChild(0).GetComponent<PlayerWeapon>().LockAim();
+            FireWeapon.GetChild(0).GetComponent<PlayerWeapon>().LockAim();
+            FireBoy.transform.DOLocalMoveY(7.0f, 0.25f).OnComplete(() => FireWeapon.GetChild(0).GetComponent<PlayerWeapon>().LockAim());
+            FrostBoy.transform.DOLocalMoveY(7.0f, 0.25f).OnComplete(() => FrostWeapon.GetChild(0).GetComponent<PlayerWeapon>().LockAim());
+        }
+        else if (Input.GetKeyDown(KeyCode.Z))
+        {
+            FrostAnim.SetBool("JetPack", false);
+            FireAnim.SetBool("JetPack", false);
+            FrostWeapon.GetChild(0).GetComponent<PlayerWeapon>().FreeAim();
+            FireWeapon.GetChild(0).GetComponent<PlayerWeapon>().FreeAim();
+            FireBoy.transform.DOLocalMoveY(0.28f, 0.25f);
+            FrostBoy.transform.DOLocalMoveY(0.28f, 0.25f);
+        }
     }
 }
