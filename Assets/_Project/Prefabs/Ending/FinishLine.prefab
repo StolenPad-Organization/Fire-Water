@@ -109,10 +109,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScorePlatform (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 9041258456478930725, guid: 2b15b02c9ebec8d4d9d4dfe717b4aa19, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b687b395286af954faa4525cac9960a6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b15b02c9ebec8d4d9d4dfe717b4aa19, type: 3}
 --- !u!4 &432148104367132054 stripped

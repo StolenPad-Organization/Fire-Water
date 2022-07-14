@@ -26,6 +26,7 @@ public class PlayerWeapon : MonoBehaviour
     [SerializeField] private EnemiesDetector enemiesDetector;
     private Vector3 originalRotation;
     private bool canAim = true;
+    private Vector3 originalLiquidRotation;
 
     private void OnEnable()
     {
@@ -50,12 +51,14 @@ public class PlayerWeapon : MonoBehaviour
         transform.localEulerAngles = originalRotation;
         canAim = false;
         ActivateWeapon(true);
+        weaponVFX.transform.localEulerAngles = Vector3.zero;
     }
 
     public void FreeAim()
     {
         canAim = true;
         ActivateWeapon(false);
+        weaponVFX.transform.localEulerAngles = originalLiquidRotation;
     }
 
     private void OnDisable()
@@ -77,6 +80,7 @@ public class PlayerWeapon : MonoBehaviour
 
     void Start()
     {
+        originalLiquidRotation = weaponVFX.transform.localEulerAngles;
         originalRotation = transform.localEulerAngles;
         enemiesList = new List<EnemyController>();
         removedList = new List<EnemyController>();
