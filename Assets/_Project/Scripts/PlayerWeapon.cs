@@ -113,28 +113,28 @@ public class PlayerWeapon : MonoBehaviour
 
     private void Update()
     {
-        if (canAim)
-        {
-            switch (weaponElement)
-            {
-                case Element.Fire:
-                    if (enemiesDetector.frostEnemiesList.Count > 0)
-                    {
-                        Transform closestTarget = enemiesDetector.frostEnemiesList[0].transform;
-                        transform.LookAt(closestTarget);
-                    }
-                    break;
-                case Element.Frost:
-                    if (enemiesDetector.fireEnemiesList.Count > 0)
-                    {
-                        Transform closestTarget = enemiesDetector.fireEnemiesList[0].transform;
-                        transform.LookAt(closestTarget);
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
+        //if (canAim)
+        //{
+        //    switch (weaponElement)
+        //    {
+        //        case Element.Fire:
+        //            if (enemiesDetector.frostEnemiesList.Count > 0)
+        //            {
+        //                Transform closestTarget = enemiesDetector.frostEnemiesList[0].transform;
+        //                transform.LookAt(closestTarget);
+        //            }
+        //            break;
+        //        case Element.Frost:
+        //            if (enemiesDetector.fireEnemiesList.Count > 0)
+        //            {
+        //                Transform closestTarget = enemiesDetector.fireEnemiesList[0].transform;
+        //                transform.LookAt(closestTarget);
+        //            }
+        //            break;
+        //        default:
+        //            break;
+        //    }
+        //}
 
         UpdateLiquid();
         if (canFire)
@@ -176,7 +176,6 @@ public class PlayerWeapon : MonoBehaviour
 
         if (canFire)
         {
-
             if (liquidValue == liquidCapacity.x)
             {
                 canFire = false;

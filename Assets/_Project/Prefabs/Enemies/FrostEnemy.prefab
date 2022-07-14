@@ -185,7 +185,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 3
-  m_Speed: 40
+  m_Speed: 30
   m_Acceleration: 30
   avoidancePriority: 50
   m_AngularSpeed: 500
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnemyElement: 1
   speed: -18.5
-  health: 250
+  health: 100
   maxHealth: 0
   healthBar: {fileID: 5122548749544008699}
   Models:

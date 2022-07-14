@@ -70,6 +70,7 @@ public class Gate : MonoBehaviour
                 playerWeapon.liquidValueBG = Mathf.Clamp(playerWeapon.liquidValueBG, playerWeapon.liquidCapacity.x, playerWeapon.liquidCapacity.y);
                 DOTween.To(() => playerWeapon.liquidValue, x => playerWeapon.liquidValue = x, playerWeapon.liquidValueBG, 0.4f)
                     .OnComplete(() => playerWeapon.matchLiquid = true);
+                gainVFX.transform.SetParent(null);
                 gainVFX.Play();
                 break;
             case Operator.Minus:
@@ -78,6 +79,7 @@ public class Gate : MonoBehaviour
                 playerWeapon.liquidValue = Mathf.Clamp(playerWeapon.liquidValue, playerWeapon.liquidCapacity.x, playerWeapon.liquidCapacity.y);
                 DOTween.To(() => playerWeapon.liquidValueBG, x => playerWeapon.liquidValueBG = x, playerWeapon.liquidValue, 0.4f)
                     .OnComplete(() => playerWeapon.matchLiquid = true);
+                drainVFX.transform.SetParent(null);
                 drainVFX.Play();
                 break;
             case Operator.Devide:
@@ -86,6 +88,7 @@ public class Gate : MonoBehaviour
                 playerWeapon.liquidValue = Mathf.Clamp(playerWeapon.liquidValue, playerWeapon.liquidCapacity.x, playerWeapon.liquidCapacity.y);
                 DOTween.To(() => playerWeapon.liquidValueBG, x => playerWeapon.liquidValueBG = x, playerWeapon.liquidValue, 0.4f)
                     .OnComplete(() => playerWeapon.matchLiquid = true);
+                drainVFX.transform.SetParent(null);
                 drainVFX.Play();
                 break;
             case Operator.Multiply:
@@ -94,6 +97,7 @@ public class Gate : MonoBehaviour
                 playerWeapon.liquidValueBG = Mathf.Clamp(playerWeapon.liquidValueBG, playerWeapon.liquidCapacity.x, playerWeapon.liquidCapacity.y);
                 DOTween.To(() => playerWeapon.liquidValue, x => playerWeapon.liquidValue = x, playerWeapon.liquidValueBG, 0.4f)
                     .OnComplete(() => playerWeapon.matchLiquid = true);
+                gainVFX.transform.SetParent(null);
                 gainVFX.Play();
                 break;
             default:
