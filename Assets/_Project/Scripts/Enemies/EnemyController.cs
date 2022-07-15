@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using DG.Tweening;
+using MoreMountains.NiceVibrations;
 
 public class EnemyController : MonoBehaviour
 {
@@ -78,6 +79,7 @@ public class EnemyController : MonoBehaviour
         }
         if (health <= 0)
         {
+            MMVibrationManager.Haptic(HapticTypes.SoftImpact);
             Coin.transform.SetParent(null);
             Coin.SetActive(true);
             EventManager.AddMoney?.Invoke(100, transform);
@@ -111,6 +113,7 @@ public class EnemyController : MonoBehaviour
 
     IEnumerator PlayerDeath()
     {
+        MMVibrationManager.Haptic(HapticTypes.HeavyImpact);
         EventManager.PlayerDeath?.Invoke();
         yield return new WaitForSecondsRealtime(3.0f);
         EventManager.TriggerLose?.Invoke();

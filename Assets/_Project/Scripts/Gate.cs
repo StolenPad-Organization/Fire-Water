@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using MoreMountains.NiceVibrations;
 
 public class Gate : MonoBehaviour
 {
@@ -72,6 +73,7 @@ public class Gate : MonoBehaviour
                     .OnComplete(() => playerWeapon.matchLiquid = true);
                 gainVFX.transform.SetParent(null);
                 gainVFX.Play();
+                MMVibrationManager.Haptic(HapticTypes.LightImpact);
                 break;
             case Operator.Minus:
                 playerWeapon.matchLiquid = false;
@@ -81,6 +83,7 @@ public class Gate : MonoBehaviour
                     .OnComplete(() => playerWeapon.matchLiquid = true);
                 drainVFX.transform.SetParent(null);
                 drainVFX.Play();
+                MMVibrationManager.Haptic(HapticTypes.MediumImpact);
                 break;
             case Operator.Devide:
                 playerWeapon.matchLiquid = false;
@@ -90,6 +93,7 @@ public class Gate : MonoBehaviour
                     .OnComplete(() => playerWeapon.matchLiquid = true);
                 drainVFX.transform.SetParent(null);
                 drainVFX.Play();
+                MMVibrationManager.Haptic(HapticTypes.MediumImpact);
                 break;
             case Operator.Multiply:
                 playerWeapon.matchLiquid = false;
@@ -99,6 +103,7 @@ public class Gate : MonoBehaviour
                     .OnComplete(() => playerWeapon.matchLiquid = true);
                 gainVFX.transform.SetParent(null);
                 gainVFX.Play();
+                MMVibrationManager.Haptic(HapticTypes.LightImpact);
                 break;
             default:
                 break;

@@ -43,6 +43,7 @@ public class UiManager : MonoBehaviour
             Destroy(moneyClone);
             money += amount;
             moneyText.text = money + "";
+            MMVibrationManager.Haptic(HapticTypes.SoftImpact);
         });
     }
 }
