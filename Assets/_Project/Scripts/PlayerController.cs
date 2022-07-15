@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour
         {
             case Element.Fire:
                 FireAnim.SetBool("JetPack", false);
+                FireAnim.SetTrigger("Victory");
                 FireWeapon.GetChild(0).GetComponent<PlayerWeapon>().FreeAim();
                 FireBoy.transform.DOLocalMoveY(0.28f, 0.25f).OnComplete(() =>
                 {
@@ -115,6 +116,7 @@ public class PlayerController : MonoBehaviour
                 break;
             case Element.Frost:
                 FrostAnim.SetBool("JetPack", false);
+                FrostAnim.SetTrigger("Victory");
                 FrostWeapon.GetChild(0).GetComponent<PlayerWeapon>().FreeAim();
                 FrostBoy.transform.DOLocalMoveY(0.28f, 0.25f).OnComplete(() =>
                 {
