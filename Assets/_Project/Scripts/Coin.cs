@@ -17,7 +17,7 @@ public class Coin : MonoBehaviour
 
     IEnumerator GiveMoney()
     {
-        yield return new WaitForSecondsRealtime(1.0f);
+        yield return new WaitForSecondsRealtime(0.8f);
         for (int i = 0; i < coinList.Length; i++)
         {
             EventManager.AddMoney?.Invoke(20, coinList[i]);
