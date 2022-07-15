@@ -82,7 +82,7 @@ public class EnemyController : MonoBehaviour
             MMVibrationManager.Haptic(HapticTypes.SoftImpact);
             Coin.transform.SetParent(null);
             Coin.SetActive(true);
-            EventManager.AddMoney?.Invoke(100, transform);
+            //EventManager.AddMoney?.Invoke(100, transform);
             //deathVFX.transform.SetParent(null);
             //deathVFX.Play();
             if (EnemyElement == Element.Frost)
