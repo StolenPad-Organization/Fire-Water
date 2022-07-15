@@ -59,11 +59,13 @@ public class WinLoseUI : MonoBehaviour
 
     private void LoadNextLevel ()
     {
+        DOTween.KillAll();
         EventManager.loadNextScene?.Invoke();
     }
 
     private void RestartLevel ()
     {
+        DOTween.KillAll();
         EventManager.loadSameScene?.Invoke();
     }
 }
