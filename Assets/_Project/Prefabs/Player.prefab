@@ -163,7 +163,7 @@ MonoBehaviour:
   realLiquidValue: 0
   liquidValueBG: 0
   realLiquidValueBG: 0
-  fillRate: 10
+  fillRate: 9
   matchLiquid: 1
   lavaPool: {fileID: 5397490400491817095}
   enemiesDetector: {fileID: 7080650671774412650}
@@ -385,7 +385,7 @@ MonoBehaviour:
   realLiquidValue: 0
   liquidValueBG: 0
   realLiquidValueBG: 0
-  fillRate: 10
+  fillRate: 9
   matchLiquid: 1
   lavaPool: {fileID: 0}
   enemiesDetector: {fileID: 7080650671774412650}
