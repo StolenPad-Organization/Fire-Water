@@ -48,6 +48,7 @@ public class PlayerWeapon : MonoBehaviour
 
     public void LockAim()
     {
+        fillRate = 12;
         transform.localEulerAngles = originalRotation;
         canAim = false;
         ActivateWeapon(true);
@@ -80,6 +81,16 @@ public class PlayerWeapon : MonoBehaviour
 
     void Start()
     {
+        if(Database.Instance.GetLevelData().LevelTextValue == 1)
+        {
+            damage += 7;
+            fillRate -= 5;
+        }
+        else if (Database.Instance.GetLevelData().LevelTextValue == 2)
+        {
+            damage += 5;
+            fillRate -= 3;
+        }
         originalLiquidRotation = weaponVFX.transform.localEulerAngles;
         originalRotation = transform.localEulerAngles;
         enemiesList = new List<EnemyController>();
