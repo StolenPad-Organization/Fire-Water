@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
+using DG.Tweening;
 
 public class PlayerWeapon : MonoBehaviour
 {
@@ -27,6 +29,7 @@ public class PlayerWeapon : MonoBehaviour
     private Vector3 originalRotation;
     private bool canAim = true;
     private Vector3 originalLiquidRotation;
+    [SerializeField] private Transform weaponBone;
 
     private void OnEnable()
     {
@@ -212,6 +215,7 @@ public class PlayerWeapon : MonoBehaviour
             if (liquidValue > liquidCapacity.x)
             {
                 canFire = true;
+                StartCoroutine(FiringRoutine());
                 if (weaponVFX.isStopped)
                 {
                     weaponVFX.Play(true);
@@ -235,6 +239,15 @@ public class PlayerWeapon : MonoBehaviour
                 weaponMuzzleVFX.Stop(true);
             if (lavaPool != null)
                 lavaPool.SetActive(false);
+        }
+    }
+
+    IEnumerator FiringRoutine()
+    {
+        while (canFire)
+        {
+            yield return weaponBone.DOScale(1.8f, 0.05f).WaitForCompletion();
+            yield return weaponBone.DOScale(1.0f, 0.05f).WaitForCompletion();
         }
     }
 }
