@@ -9,6 +9,7 @@ public class UiManager : MonoBehaviour
 {
     [Header("Money Variables")]
     [SerializeField] private int money;
+    [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private Transform moneyTarget;
     [SerializeField] private Transform canvasSpace;
@@ -29,6 +30,7 @@ public class UiManager : MonoBehaviour
     {
         money = 0;
         moneyText.text = money + "";
+        levelText.text = "Level " + Database.Instance.GetLevelData().LevelTextValue;
     }
 
     private void AddMoney(int amount, Transform target)
