@@ -121,4 +121,14 @@ public class Database : MonoBehaviour
     {
         data.LevelData = value;
     }
+
+    public int GetMoney()
+    {
+        return data.Money;
+    }
+
+    public void SetMoney(int value)
+    {
+        data.Money = value;
+    }
 }

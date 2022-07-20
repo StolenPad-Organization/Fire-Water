@@ -37,7 +37,8 @@ public class WinLoseUI : MonoBehaviour
     {
         if (gameEnded) return;
         gameEnded = true;
-        ShowPanel(winGroup, winPanel);
+        //ShowPanel(winGroup, winPanel);
+        Invoke("Win", 0.5f);
     }
 
     public void LoseUI ()
@@ -45,6 +46,11 @@ public class WinLoseUI : MonoBehaviour
         if (gameEnded) return;
         gameEnded = true;
         ShowPanel(loseGroup, losePanel);
+    }
+
+    void Win()
+    {
+        ShowPanel(winGroup, winPanel);
     }
 
     private void ShowPanel (CanvasGroup group, Transform panel)

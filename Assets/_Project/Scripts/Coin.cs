@@ -20,7 +20,7 @@ public class Coin : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.5f);
         for (int i = 0; i < coinList.Length; i++)
         {
-            EventManager.AddMoney?.Invoke(20, coinList[i]);
+            EventManager.AddMoney?.Invoke(10, coinList[i]);
             coinList[i].gameObject.SetActive(false);
         }
     }

@@ -9,12 +9,12 @@ public static class EventManager
     public static Action<bool> OpenFireWeapon;
     public static Action<bool> OpenFrostWeapon;
     public static Action<int, Transform> AddMoney;
-    public static Action PlayerDeath;
-    public static Action<Element> DeactivateJetpack;
     #endregion
 
     #region Ending Events
-
+    public static Action PlayerDeath;
+    public static Action<Element> DeactivateJetpack;
+    public static Action<int> UpdateScore;
     #endregion
 
     #region Level Events
