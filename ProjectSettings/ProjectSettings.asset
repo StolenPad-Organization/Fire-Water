@@ -687,7 +687,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     1: DREAMTECK_SPLINES;MOREMOUNTAINS_NICEVIBRATIONS
     4: DREAMTECK_SPLINES
-    7: MOREMOUNTAINS_NICEVIBRATIONS;DREAMTECK_SPLINES
+    7: MOREMOUNTAINS_NICEVIBRATIONS;DREAMTECK_SPLINES;URP_OUTLINE
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
